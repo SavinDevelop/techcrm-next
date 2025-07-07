@@ -1,21 +1,22 @@
 "use client"
 
-import * as React from "react"
+import type * as React from "react"
 import {
   BookOpen,
   Bot,
   Command,
   Frame,
   LifeBuoy,
+  // biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
   Map,
   PieChart,
+  ShieldUser,
   Send,
   Settings2,
   SquareTerminal,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
 import {
@@ -36,40 +37,51 @@ const data = {
   },
   navMain: [
     {
-      title: "Playground",
+      title: "Адміністрування",
       url: "#",
       icon: SquareTerminal,
-      isActive: true,
       items: [
         {
-          title: "History",
+          title: "Користувачі",
           url: "#",
         },
         {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
+          title: "Логи",
           url: "#",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Менеджер",
       url: "#",
-      icon: Bot,
+      icon: ShieldUser,
       items: [
         {
-          title: "Genesis",
+          title: "Заявки",
           url: "#",
         },
         {
-          title: "Explorer",
+          title: "Персони",
           url: "#",
         },
         {
-          title: "Quantum",
+          title: "Робітники",
+          url: "#",
+        },
+        {
+          title: "Відділи",
+          url: "#",
+        },
+        {
+          title: "Техніка",
+          url: "#",
+        },
+        {
+          title: "Звіти",
+          url: "#",
+        },
+        {
+          title: "Кабінети",
           url: "#",
         },
       ],
@@ -133,23 +145,7 @@ const data = {
       icon: Send,
     },
   ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
+  
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -159,23 +155,23 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+              <div>
                 <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                   <Command className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
+                  <span className="truncate font-medium">TechCRM</span>
+                  <span className="truncate text-xs">Інформаційно-обчислювальний центр</span>
                 </div>
-              </a>
+              </div>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+
+        {/* <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />

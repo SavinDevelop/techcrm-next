@@ -21,13 +21,12 @@ export function LoginForm({
               <div className="flex size-8 items-center justify-center rounded-md">
                 <GalleryVerticalEnd className="size-6" />
               </div>
-              <span className="sr-only">ІОЦ</span>
             </a>
             <h1 className="text-xl font-bold">Вітаємо в TechCRM</h1>
           </div>
           <div className="flex flex-col gap-6">
             <div className="grid gap-3">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">Пошта</Label>
               <Input
                 id="email"
                 type="email"
@@ -36,7 +35,7 @@ export function LoginForm({
               />
             </div>
             <div className="grid gap-3">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">Пароль</Label>
               <Input
                 id="password"
                 type="password"
@@ -45,7 +44,7 @@ export function LoginForm({
               />
             </div>
             <Button type="submit" className="w-full">
-              Login
+              Увійти
             </Button>
           </div>
           <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
